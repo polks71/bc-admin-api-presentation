@@ -36,8 +36,13 @@ IHost host = Host.CreateDefaultBuilder(args)
             return new AdminCenterClient(cred);
         });
         services.AddTransient<EnvironmentHelper>();
+        services.AddTransient<SetAppInsightsKeyHelper>();
 
     }).Build();
 var environmentHelper = host.Services.GetRequiredService<EnvironmentHelper>();
 await environmentHelper.CreateEnvironmentAsync("Sandbox", "US", "DemoSandbox","","");
+
+var appInsightsKeyHelper = host.Services.GetRequiredService<SetAppInsightsKeyHelper>();
+var appInsightsKey = @"InstrumentationKey={REPLACE_WITH_GUID};IngestionEndpoint=https://eastus-8.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus.livediagnostics.monitor.azure.com/";
+await appInsightsKeyHelper.SetAppInsightsKeyAsync(appInsightsKey, "DemoSandbox");
 
