@@ -7,6 +7,7 @@ using System.Reflection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Dynamics.BusinessCentral.AdminCenter;
 using Microsoft.Extensions.Caching.Memory;
+using BCAdminAPISamples.Helpers;
 
 Console.WriteLine("Hello, World!");
 IHost host = Host.CreateDefaultBuilder(args)
@@ -34,6 +35,9 @@ IHost host = Host.CreateDefaultBuilder(args)
             );
             return new AdminCenterClient(cred);
         });
-
+        services.AddTransient<EnvironmentHelper>();
 
     }).Build();
+var newpricelist = host.Services.GetRequiredService<EnvironmentHelper>();
+await newpricelist.CreateEnvironmentAsync("Sandbox", "US", "DemoSandbox","","");
+

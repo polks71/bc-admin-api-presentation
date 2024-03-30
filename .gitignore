@@ -396,3 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/src/BCAdminApiPresentation/ApplicationLanding/Properties/ServiceDependencies/rjb-bc-admin-api-demo - Web Deploy/profile.arm.json
