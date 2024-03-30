@@ -5,12 +5,8 @@ using Environment = Microsoft.Dynamics.BusinessCentral.AdminCenter.Models.Enviro
 
 namespace BCAdminAPISamples.Helpers
 {
-    internal class EnvironmentHelper : HelperBase
+    internal class EnvironmentHelper(AdminCenterClient adminCenterClient) : HelperBase(adminCenterClient)
     {
-        public EnvironmentHelper(AdminCenterClient adminCenterClient) :
-            base(adminCenterClient)
-        { }
-
         public async Task<List<Environment>> GetEnvironmentsAsync()
         {
             var returnEnvironments = new List<Environment>();

@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace BCAdminAPISamples.Helpers
 {
-    internal class HelperBase(AdminCenterClient adminCenterClient)
+    internal class SetAppInsightsKeyHelper(AdminCenterClient adminCenterClient) : HelperBase(adminCenterClient)
     {
-        protected AdminCenterClient _adminCenterClient = adminCenterClient;
     }
 }
