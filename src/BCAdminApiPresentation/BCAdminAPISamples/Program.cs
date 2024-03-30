@@ -38,6 +38,6 @@ IHost host = Host.CreateDefaultBuilder(args)
         services.AddTransient<EnvironmentHelper>();
 
     }).Build();
-var newpricelist = host.Services.GetRequiredService<EnvironmentHelper>();
-await newpricelist.CreateEnvironmentAsync("Sandbox", "US", "DemoSandbox","","");
+var environmentHelper = host.Services.GetRequiredService<EnvironmentHelper>();
+await environmentHelper.CreateEnvironmentAsync("Sandbox", "US", "DemoSandbox","","");
 
