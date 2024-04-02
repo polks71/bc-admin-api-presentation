@@ -37,6 +37,7 @@ IHost host = Host.CreateDefaultBuilder(args)
         });
         services.AddTransient<EnvironmentHelper>();
         services.AddTransient<SetAppInsightsKeyHelper>();
+        services.AddTransient<UpdateScheduleHelper>();
 
     }).Build();
 var environmentHelper = host.Services.GetRequiredService<EnvironmentHelper>();
@@ -46,3 +47,5 @@ var appInsightsKeyHelper = host.Services.GetRequiredService<SetAppInsightsKeyHel
 var appInsightsKey = @"InstrumentationKey={REPLACE_WITH_GUID};IngestionEndpoint=https://eastus-8.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus.livediagnostics.monitor.azure.com/";
 await appInsightsKeyHelper.SetAppInsightsKeyAsync(appInsightsKey, "DemoSandbox");
 
+var updateScheduler = host.Services.GetRequiredService<UpdateScheduleHelper>();
+await updateScheduler.ScheduleUpdateAsync("DemoSandbox", new DateTimeOffset(DateTime.Now.AddDays(1)));
