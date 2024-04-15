@@ -25,5 +25,4 @@ Authentication of the Admin Center Client using the Entra ID Tenant ID, Entra ID
 
 [Custom Page Connectors](https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/connections-list#standard-and-custom-connectors)
 
-![image](https://github.com/TruNorth-Dynamics/bc-admin-api-presentation/assets/23003226/ba378d62-dce8-4585-86b2-5360ba80207c)
 
