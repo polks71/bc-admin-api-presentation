@@ -13,3 +13,16 @@ This is a small console application that provides some samples using the [BC Adm
 
 ## Admin Center Authentication
 Authentication of the Admin Center Client using the Entra ID Tenant ID, Entra ID App Id, and app secret. This approach allows for a multi-tenant application to authentication in any customer tenant where admin consent has been granted. 
+
+## References
+[Admin Center API](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/administration-center-api)
+
+[BC Tech Github Repo](https://github.com/microsoft/BCTech/tree/master/samples/AdminCenterApi)
+
+[BC Telemetry](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/telemetry-overview)
+
+[Entra ID Admin Consent](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/user-admin-consent-overview)
+
+[Custom Page Connectors](https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/connections-list#standard-and-custom-connectors)
+
+
